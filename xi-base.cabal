@@ -1,0 +1,37 @@
+Name:               xi-base
+Version:            0.0.0
+Synopsis:           Parser, analyser and interpreter for Xi Base language.
+Description:        Xi Base is a base intermediate language that would glue up different languages.
+Build-type:         Simple
+License:            BSD3
+License-File:       LICENSE
+Copyright:          (c) 2011-2012 Kudasov Nickolay
+Author:             Nickolay Kudasov
+Maintainer:         crazy.fizruk@gmail.com
+Stability:          Experimental
+Homepage:           http://github.com/fizruk/xi-base
+Bug-Reports:        mailto:crazy.fizruk@gmail.com
+Category:           Language.Xi
+Tested-With:        ghc
+Cabal-Version:      >=1.2
+
+Library
+  Build-Depends:    base, array, parsec, containers, mtl
+  Hs-Source-Dirs:   src
+  Exposed-Modules:
+        -- top-level
+        Language.Xi.Base
+        -- parser
+        Language.Xi.Base.Parser
+        -- syntax
+        Language.Xi.Base.Syntax
+        -- analysis and intermediate representation
+        Language.Xi.Base.Analysis
+        -- interpreter
+        Language.Xi.Base.Interpreter
+
+Executable xi-base
+    Main-Is:        Main.hs
+    Hs-Source-Dirs: src
+    Other-Modules:  Language.Xi.Base
+
