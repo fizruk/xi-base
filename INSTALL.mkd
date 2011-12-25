@@ -1,0 +1,9 @@
+Installation
+============
+
+`xi-base` is distibuted as a cabal package, so the following should install
+Xi Base interpreter:
+
+    cabal install xi-base
+
+
