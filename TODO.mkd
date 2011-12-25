@@ -1,0 +1,8 @@
+TODO list
+=========
+
+As this project has started very recently, there are at first some base things to do:
++ parser
++ inremediate representation
++ interpreter
+
