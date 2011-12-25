@@ -35,3 +35,37 @@ data ComparisonOperation
     | CompGE    -- ^ Greater than or equal.
     | CompGT    -- ^ Greater than.
 
+-- | Syntactic expression.
+data Expression
+    = ExprBool      BoolExpression      -- ^ Boolean expression.
+    | ExprInt       IntExpression       -- ^ Integer expression.
+    | ExprChar      CharExpression      -- ^ Character expression.
+    | ExprString    StringExpression    -- ^ String expression.
+    | ExprUnit      UnitExpression      -- ^ Unit expression.
+
+-- | Boolean expressions.
+data BoolExpression
+    = BoolExprConst      ConstBool                              -- ^ Boolean literal.
+    | BoolExprOp         BoolOperation [BoolExpression]         -- ^ Operation over booleans.
+    | BoolExprCompInt    ComparisonOperation [IntExpression]    -- ^ Integer comparison.
+    | BoolExprCompChar   ComparisonOperation [CharExpression]   -- ^ Character comparison.
+    | BoolExprCompString ComparisonOperation [StringExpression] -- ^ String comparison.
+
+-- | Integer expressions.
+data IntExpression
+    = IntExprConst  ConstInt                        -- ^ Integer literal.
+    | IntExprOp     IntOperation [IntExpression]    -- ^ Operation over integers.
+
+-- | Character expressions.
+data CharExpression
+    = CharExprConst ConstChar
+
+-- | String expressions.
+data StringExpression
+    = StringExprConst ConstString                           -- ^ String literal.
+    | StringExprOp    StringOperation [StringExpression]    -- ^ Operation over strings.
+
+-- | Unit (void) expressions.
+data UnitExpression
+    = UnitExprConst ConstUnit   -- ^ Unit literal.
+
