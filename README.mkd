@@ -1,0 +1,5 @@
+Xi Base
+=======
+
+Xi Base language is relatively low level language, that would act
+as somewhat intermediate language for different extensions.
